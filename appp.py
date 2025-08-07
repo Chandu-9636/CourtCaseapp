@@ -61,12 +61,6 @@ def search():
         	time.sleep(2)
         except Exception as e:
         	flash(e)
-        # Manual CAPTCHA input
-        #flash('Please enter CAPTCHA manually in the opened browser and click Submit.', 'info')
-
-        # Wait for user to complete CAPTCHA and submit
-        #while 'casestatusresult' not in driver.current_url:
-        #	time.sleep(2)
 
         # Wait for results to load
         time.sleep(3)

@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Case Details</title></head>
+<body>
+  <h2>Case Metadata</h2>
+  <p><strong>Parties:</strong> {{ parties }}</p>
+  <p><strong>Filing Date:</strong> {{ filing_date }}</p>
+  <p><strong>Next Hearing:</strong> {{ next_hearing }}</p>
+
+  <h3>Recent Orders/Judgments</h3>
+  {% if pdf_links %}
+    <ul>
+    {% for link in pdf_links %}
+      <li><a href="{{ link }}" target="_blank">Download Order PDF</a></li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>No PDF orders available.</p>
+  {% endif %}
+
+  <a href="/">Search Another Case</a>
+</body>
+</html>

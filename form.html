@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Case Lookup</title></head>
+<body>
+  <h2>Search Case Info</h2>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+      <p style="color:red">{{ message }}</p>
+    {% endfor %}
+  {% endwith %}
+  <form method="POST" action="/search">
+    <label>Case Type:</label>
+    <input type="text" name="case_type" required><br>
+    <label>Case Number:</label>
+    <input type="text" name="case_number" required><br>
+    <label>Filing Year:</label>
+    <input type="text" name="filing_year" required><br>
+    <input type="submit" value="Search">
+  </form>
+</body>
+</html>

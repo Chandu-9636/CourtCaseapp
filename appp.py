@@ -87,7 +87,8 @@ def search():
         	filing_date='Not Available'
         try:
         	next_hearing = driver.find_element(By.XPATH, '//*[@id="caseTable"]/tbody/tr/td[2]').text.strip()
-        	match=re.search(r'Next Hearing:(\d+)',next_hearing)
+            text_td=next_hearing.text
+        	match=re.search(r'Next Hearing:(\d+)',text_td)
         	if match:
         		next_hearing=match.group(1)
         except Exception:
